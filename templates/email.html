@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Account Verification Email</title>
+    <style>
+        /* Add your custom CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .otp {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Account Verification</h1>
+        <p>Dear User,</p>
+        <p>Your account verification LINK is:</p>
+        <p class="activation_link">{{ activation_link }}</p>
+        <p>Please click this link to verify your account.</p>
+        <p>Thank you for using our service!</p>
+    </div>
+</body>
+</html>
