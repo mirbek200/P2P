@@ -43,11 +43,13 @@ services:
       - ./docker/nginx/dev:/etc/nginx/conf.d
       - static_volume:/app/staticfiles
       - media_volume:/app/media
+      - ./docker/nginx/ssl:/etc/nginx/ssl
     networks:
       - my-network
     depends_on:
       - backend
       - db
+
 
 volumes:
   media_volume:
