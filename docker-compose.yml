@@ -43,7 +43,9 @@ services:
       - ./docker/nginx/dev:/etc/nginx/conf.d
       - static_volume:/app/staticfiles
       - media_volume:/app/media
-      - ./docker/nginx/ssl:/etc/nginx/ssl
+      - /etc/ssl/arbitcash.space.crt:/etc/ssl/arbitcash.space.crt:ro
+      - /etc/ssl/arbitcash.space.key:/etc/ssl/arbitcash.space.key:ro
+
     networks:
       - my-network
     depends_on:
