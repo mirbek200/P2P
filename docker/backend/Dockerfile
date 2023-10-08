@@ -17,7 +17,7 @@ RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
 # Устанавливаем psycopg2-binary для подключения к PostgreSQL
-RUN pip install psycopg2-binary
+RUN pip install psycopg2
 
 # Копируем файлы из каталога ./docker внутрь контейнера
 COPY ./docker /app/docker
