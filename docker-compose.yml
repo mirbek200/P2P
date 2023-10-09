@@ -2,61 +2,34 @@ version: '3.7'
 
 services:
   db:
-    image: 'postgres:13-alpine'
-    environment:
-      POSTGRES_DB: db
-      POSTGRES_USER: developer
-      POSTGRES_PASSWORD: Passw0rd33
+    image: 'postgres:12.4'
+    environment: 
+        POSTGRES_DB: db
+        POSTGRES_USER: developer
+        POSTGRES_PASSWORD: Passw0rd33
     volumes:
-      - ./data/pg_data:/var/lib/postgresql/data
-
-  backend:
-    restart: unless-stopped
-    build:
-      context: .
-      dockerfile: ./docker/backend/Dockerfile
-    ports:
-      - 8000:8000
+      - ./db:/var/lib/postgresql/data
+  web:
     volumes:
-      - static_volume:/app/static/
-      - media_volume:/app/media/
-    entrypoint: /app/docker/backend/wsgi-entrypoint.sh
-    networks:
-      - my-network
-    depends_on:
-      - db
+      - ./kernel:/apps
+      - ./kernerl/staticfiles:/app/static
+      - ./kernel/media:/app/media
     env_file:
-      - ./.env
-
-
-
-
-  nginx:
-    restart: unless-stopped
-    build:
-      context: .
-      dockerfile: ./docker/nginx/Dockerfile
+      - ./kernel/.env
+    build: ./kernel
     ports:
-      - 80:80
-      - 443:443
-    volumes:
-      - ./docker/nginx/dev:/etc/nginx/conf.d
-      - static_volume:/app/staticfiles
-      - media_volume:/app/media
-      - /etc/ssl/arbitcash.space.crt:/etc/ssl/arbitcash.space.crt:ro
-      - /etc/ssl/arbitcash.space.key:/etc/ssl/arbitcash.space.key:ro
-
-    networks:
-      - my-network
+      - '8000:8000'
     depends_on:
-      - backend
       - db
-
+  nginx:
+    build: ./nginx
+    volumes:
+      - ./kernerl/staticfiles:/static
+      - ./kernel/media:/media
+    ports:
+      - '80:80'
+    depends_on:
+      - web
 
 volumes:
-  media_volume:
-  static_volume:
-  postgres_data:
-
-networks:
-  my-network:
+  static:
