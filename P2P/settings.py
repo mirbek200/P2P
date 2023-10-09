@@ -119,9 +119,9 @@ WSGI_APPLICATION = 'P2P.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
+        'NAME': 'db',
+        'USER': 'developer',
+        'PASSWORD': 'Passw0rd33',
         'HOST': 'db',
         'PORT': 5432
     }
