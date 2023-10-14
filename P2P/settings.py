@@ -28,7 +28,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['localhost', '51.250.54.14', '127.0.0.1', 'arbitcash.space']
+ALLOWED_HOSTS = ['localhost', '84.201.184.40', '127.0.0.1', 'arbitcash.space']
 
 
 AUTH_USER_MODEL = 'users.MyUser'
