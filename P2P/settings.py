@@ -28,7 +28,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '84.201.184.40', '127.0.0.1', 'arbitcash.space', '54.82.6.149', '54.196.148.91', 'test-466116233.us-east-1.elb.amazonaws.com']
+ALLOWED_HOSTS = ['localhost', '84.201.184.40', '127.0.0.1', 'arbitapi.com', '54.82.6.149', '54.196.148.91', 'test-466116233.us-east-1.elb.amazonaws.com']
 
 
 AUTH_USER_MODEL = 'users.MyUser'
