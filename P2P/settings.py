@@ -64,26 +64,19 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-# CORS_ALLOWED_ORIGINS = [
-#     "http://localhost:3000",
-# ]
+# corsheaders
+CORS_ALLOW_ALL_ORIGINS = False
 
-# CORS_ALLOW_METHODS = (
-#     "DELETE",
-#     "GET",
-#     "OPTIONS",
-#     "PATCH",
-#     "POST",
-#     "PUT",
-# )
-
-CORS_ALLOW_HEADERS = [
-    "authorization",
-    "x-requested-with",
-    "content-type",
-    "accept",
-    "origin",
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    "http://localhost:3001",
+    "https://www.arbitapi.com",
+    "https://arbitapi.com",
+    "http://www.arbitapi.com",
+    "http://arbitapi.com",
+    "https://arbitapi.com",
 ]
+CORS_ALLOW_CREDENTIALS = True
 ROOT_URLCONF = 'P2P.urls'
 
 TEMPLATES = [
