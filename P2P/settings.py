@@ -70,7 +70,7 @@ CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://localhost:3001",
-    "https://vercel.com/akssses/p2p-cripto",
+    "https://p2p-cripto.vercel.app",
 ]
 
 CORS_ALLOW_CREDENTIALS = True
