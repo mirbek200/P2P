@@ -70,12 +70,12 @@ CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://localhost:3001",
-    "https://www.arbitapi.com",
-    "https://arbitapi.com",
-    "http://www.arbitapi.com",
-    "http://arbitapi.com",
-    "https://arbitapi.com",
+    "https://vercel.com/akssses/p2p-cripto",
+    "http://vercel.com/akssses/p2p-cripto",
+    "https://www.vercel.com/akssses/p2p-cripto",
+    "http://www.vercel.com/akssses/p2p-cripto",
 ]
+
 CORS_ALLOW_CREDENTIALS = True
 ROOT_URLCONF = 'P2P.urls'
 
