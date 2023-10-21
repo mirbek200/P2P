@@ -39,6 +39,7 @@ class LoginSerializer(serializers.Serializer):
                 'access': str(refresh.access_token),
                 'is_admin': user.is_admin,
                 'is_superuser': user.is_superuser,
+                'check_code': user.check_code,
             }
         raise serializers.ValidationError('Incorrect email/phone number or password')
 
