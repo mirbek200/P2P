@@ -71,6 +71,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://localhost:3001",
     "https://p2p-cripto.vercel.app",
+    "https://arbitcash.space",
 ]
 
 CORS_ALLOW_CREDENTIALS = True
